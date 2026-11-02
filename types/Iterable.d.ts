@@ -32,20 +32,20 @@ interface AsyncGenerator<Yields = unknown, Returns = any, Next = unknown> extend
 	[Symbol.asyncIterator](): AsyncGenerator<Yields, Returns, Next>;
 }
 
-interface AsyncIterable<T> {
-	[Symbol.asyncIterator](): AsyncIterator<T>;
+interface AsyncIterable<T, TReturn = any, TNext = any> {
+	[Symbol.asyncIterator](): AsyncIterator<T, TReturn, TNext>;
 }
 
-interface Iterable<T> {
-	[Symbol.iterator](): Iterator<T>;
+interface Iterable<T, TReturn = any, TNext = any> {
+	[Symbol.iterator](): Iterator<T, TReturn, TNext>;
 }
 
-interface AsyncIterableIterator<T> extends AsyncIterator<T> {
-	[Symbol.asyncIterator](): AsyncIterableIterator<T>;
+interface AsyncIterableIterator<T, TReturn = any, TNext = any> extends AsyncIterator<T, TReturn, TNext> {
+	[Symbol.asyncIterator](): AsyncIterableIterator<T, TReturn, TNext>;
 }
 
-interface IterableIterator<T> extends Iterator<T> {
-	[Symbol.iterator](): IterableIterator<T>;
+interface IterableIterator<T, TReturn = any, TNext = any> extends Iterator<T, TReturn, TNext> {
+	[Symbol.iterator](): IterableIterator<T, TReturn, TNext>;
 }
 
 interface IterableFunction<T> extends Iterable<T> {
