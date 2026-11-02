@@ -13,3 +13,15 @@
   or editor on TypeScript 5.5 reports TS2317 ("Global type 'Iterable' must have 1 type parameter(s)") in
   `Iterable.d.ts` unless `skipLibCheck` is set. 3.0.0-types.0 has the opposite case: TypeScript 5.6 to 5.9 report
   TS2317 for its one-parameter forms.
+
+### Install
+
+From the GitHub release (no npm registry involved), in `package.json`:
+
+```json
+"devDependencies": {
+	"@rbxts/compiler-types": "https://github.com/rbxts-rs/compiler-types/releases/download/v3.0.0-types.1-ts7.0/rbxts-compiler-types-3.0.0-types.1-ts7.0.tgz"
+}
+```
+
+then `npm install` / `bun install` / `pnpm install`. The tarball holds only `types/*.d.ts`, the README and the license.
